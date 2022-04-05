@@ -1,0 +1,44 @@
+<%- include('../partials/header'); %>
+
+    <main class="main container">
+        <div class="row">
+            <h2 class="col-12"><%= name %></h2>
+            <section class="section row">
+                <figure class="figure col-10">
+                    <img src="<%= data.image %>" alt="<%= data.name %>" class="img-fluid">
+                    <figcaption><%= data.name %></figcaption>
+                </figure>
+                <ul>
+                    <h2>Elements:</h2>
+                    <% for (let i =0; i < data.elements.length; i++ ) { %>
+                    <li> <%= data.elements[i].type %> </li>
+                    <li><img src="<%= data.elements[i].image %>" <%= data.elements[i].type %>" </li>
+                <% } %>
+                </ul>
+                <ul>
+                    <h2>Weakness</h2>
+                    <% for (let i =0; i < data.weakness.length; i++ ) { %>
+                    <li> <%= data.weakness[i].type %> </li>
+                    <li><img src="<%= data.weakness[i].image %>" <%= data.weakness[i].type %>" </li>
+                <% } %>
+                </ul>
+                <ul>
+                    <h2>Resistance</h2>
+                    <% for (let i =0; i < data.resistance.length; i++ ) { %>
+                    <li> <%= data.resistance[i].type %> </li>
+                    <li><img src="<%= data.resistance[i].image %>" <%= data.resistance[i].type %>" </li>
+                <% } %>
+                </ul>
+                <h2>Stats</h2>
+                <ul class="single-ul">
+                    <li class="single-item"> <strong>Strength:</strong> <%= data.stats.strength %></li>
+                    <li class="single-item">Magic: <%= data.stats.magic %></li>
+                    <li class="single-item">Health: <%= data.stats.health %></li>
+                    <li class="single-item">Defense: <%= data.stats.defense %></li>
+                    <li class="single-item">Potion: <%= data.stats.potion %></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+<%- include('../partials/footer'); %>

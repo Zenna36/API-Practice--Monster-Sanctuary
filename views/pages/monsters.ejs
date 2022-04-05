@@ -1,0 +1,18 @@
+<%- include ('../partials/header'); %>
+
+<main class="main container">   
+    <div class="row">
+        <% data.forEach(item => { %>
+            <div class="col-md-4">
+                <a href="/monsters/<%= item.id %>">
+                    <h2><%= item.title %></h2>
+                    <p>Name: <%= item.name %></p>
+                    <img class="img-fluid" src="<%= item.image %>" alt="<%= item.title %>">
+                    <hr>
+                </a>
+            </div>
+        <% }) %>
+    </div>
+</main>
+
+<%- include ('../partials/header'); %>
